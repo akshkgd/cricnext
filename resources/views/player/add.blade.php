@@ -12,17 +12,22 @@
                 <input type="text"  name=" name" class="form-control" placeholder=" name"  >
               </div>
               <div class="form-group mb-1 ">
-                <label for="password">Birthday</label>
-                <input type="text"  name="age" class="form-control" placeholder="DOB"  >
+                <label for="password"> Age</label>
+                <input type="text"  name="age" class="form-control" placeholder="Enter Age"  >
               </div>
-
+              
               <div class="form-group mb-1 ">
                 <label for="password">Role</label>
                 <input type="text"  name="role" class="form-control" placeholder="Batsman / Bowler"  >
               </div>
               <div class="form-group mb-1 ">
                 <label for="password">Select Team</label>
-                <input type="text"  name="team_id" class="form-control" placeholder="Details"  >
+                <select class="form-control" name="team_id" required="required">
+                            <option value="" selected="selected" disabled="disabled">Select Team 1</option>
+                            @foreach ($teams as $team)
+                            <option value="{{$team->id}}">{{$team->name}}</option>
+                            @endforeach
+                        </select>
               </div>
               <div class="form-group mb-1 ">
                 <label for="password">Is captian</label>

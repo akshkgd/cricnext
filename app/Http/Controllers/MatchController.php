@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Match;
+use App\Team;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
@@ -25,7 +26,8 @@ class MatchController extends Controller
      */
     public function create()
     {
-        return view('match.add');
+        $teams = Team::all();
+        return view('match.add', compact('teams'));
     }
 
     /**
@@ -44,7 +46,7 @@ class MatchController extends Controller
             $path = $request->file('image')->store('img', 'public');
             $a->image = $path;
         }
-        $a->status = $request->status;
+        $a->status = 0;
         $a->save();
         return redirect('/match');
 
@@ -70,7 +72,8 @@ class MatchController extends Controller
     public function edit( $id)
     {
          $match = Match::findorFail($id);
-         return view('match.edit', compact('match'));
+         $teams = Team::all();
+         return view('match.edit', compact('match', 'teams'));
     }
 
     /**
@@ -83,7 +86,6 @@ class MatchController extends Controller
     public function update(Request $request,  $match)
     {
         $a  = Match::findorFail($match);
-        $a = new Match();
         $a->team_1 = $request->team_1;
         $a->team_2 = $request->team_2;
         if($request->hasFile('image')){
@@ -96,6 +98,7 @@ class MatchController extends Controller
         $a->score2 = $request->score2;
         $a->result = $request->result;
         $a->save();
+        return redirect('/match');
     }
 
     /**
@@ -104,8 +107,9 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Match $match)
+    public function destroy( $match)
     {
-        //
+        Match::destroy($match);
+        return redirect('/match');
     }
 }

@@ -115,17 +115,17 @@
                     <div class="d-flex justify-content-between mb-2">
                       <div>
                         <a href="#" class="mb-1">
-                          <h4>{{$l->team1->name}} Vs {{$u->team2->name}}</h4>
+                          <h4>{{$l->team1->name}} Vs {{$l->team2->name}}</h4>
                         </a>
-                        <span>{{$l->score1}}</span> <br>
-                        <span>{{$l->score2}}</span>
+                        <span>{{$l->team1->name}}: {{$l->score1}} </span> <br>
+                        <span> {{$l->team2->name}}: {{$l->score2}}</span>
                       </div>
 
                     </div>
-                    <a class="badge badge-secondary badge-pill mb-2" href="#">Second Innings</a>
+                    <a class="badge badge-secondary badge-pill mb-2" href="#">Live</a>
                     <div class="text-small">
                       <ul class="list-inline">
-                        <li class="list-inline-item"><i class="icon-heart"></i> 221</li>
+                        <!-- <li class="list-inline-item"><i class="icon-heart"></i> 221</li> -->
 
                       </ul>
                     </div>
@@ -150,7 +150,7 @@
               <li class="list-group-item">
                 <div class="media align-items-center">
                   <a href="#" class="mr-4">
-                    <img alt="Image" src="{{asset('/storage/'. $u->image)}}" class="rounded avatar avatar-lg" />
+                    <img alt="fgfk" src="{{asset('/storage/'. $u->image)}}" class="rounded avatar avatar-lg" />
                   </a>
                   <div class="media-body">
                     <div class="d-flex justify-content-between mb-2">
@@ -180,7 +180,7 @@
         <!--end of col-->
         <div class="col-lg-3">
           <div data-sticky="top">
-            <div class="card card-borderless bg-secondary">
+            <div class="card card-borderless bg-secondary" >
               <a class="card-body" href="#">
                 <div class="d-flex justify-content-between mb-3">
                   Codekaro

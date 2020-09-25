@@ -26,6 +26,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
     public function welcome(){
         $batsman = Player::orderBy('runs', 'desc')->take(3)->get();
         $bowlers = Player::orderBy('wickets', 'desc')->take(3)->get();

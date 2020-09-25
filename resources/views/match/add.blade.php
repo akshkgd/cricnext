@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group mb-1 ">
                         <label for="password">Team Two</label>
-                        <select class="form-control" name="team_1" required="required">
+                        <select class="form-control" name="team_2" required="required">
                             <option value="" selected="selected" disabled="disabled">Select Team 2</option>
                             @foreach ($teams as $team)
                             <option value="{{$team->id}}">{{$team->name}}</option>
@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="">Image</label> <br>
-                        <input type="file" name="logo" value="upload" class="b">
+                        <input type="file" name="image" value="upload" class="b">
                     </div>
                     <input type="hidden" name="status" value="0">
 

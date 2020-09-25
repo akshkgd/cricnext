@@ -30,7 +30,12 @@
                     </div>
                     <div class="form-group mb-1 ">
                         <label for="password">Select Team</label>
-                        <input type="text" name="team_id" class="form-control" value="{{$player->team_id}}">
+                        <select class="form-control" name="team_id" required="required">
+                            <option value="{{$player->team_id}}" selected="selected">{{$player->team_id}}</option>
+                            @foreach ($teams as $team)
+                            <option value="{{$team->id}}">{{$team->name}}</option>
+                            @endforeach
+                        </select>    
                     </div>
                     <div class="form-group mb-1 ">
                         <label for="password">Is captian</label>
