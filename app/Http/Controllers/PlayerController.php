@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Player;
+use App\Team;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -25,7 +26,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('player.add');
+    $teams = Team::all();
+        return view('player.add', compact('teams'));
     }
 
     /**
@@ -39,11 +41,10 @@ class PlayerController extends Controller
         $a = new  Player;
         $a->name  = $request->name;
         $a->age  = $request->age;
-        if ($request->hasFile('image')) {
-
+          if($request->hasFile('image')){
+            
             $path = $request->file('image')->store('img', 'public');
-            $a->image = $path;
-        }
+            $a->image = $path;}
         $a->desc  = $request->desc;
         $a->team_id  = $request->team_id;
 
@@ -87,26 +88,20 @@ class PlayerController extends Controller
     public function edit($player)
     {
         $player = Player::findorFail($player);
-        return view('player.edit', compact('player'));
+        $teams = Team::all();
+        return view('player.edit', compact('player', 'teams'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Player  $player
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         $a = Player::findorFail($id);
         $a->name  = $request->name;
         $a->age  = $request->age;
-        if ($request->hasFile('image')) {
-
+        if($request->hasFile('image')){
+            
             $path = $request->file('image')->store('img', 'public');
-            $a->image = $path;
-        }
+            $a->image = $path;}
         $a->desc  = $request->desc;
         $a->team_id  = $request->team_id;
 
