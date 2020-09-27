@@ -25,7 +25,7 @@
                 </div>
                 <div class="d-flex justify-content-between ">
                     <div class="d-flex">
-                        <img src="{{asset('/storage/'. $team->image)}}" class="avatar" alt="">
+                        <img src="{{asset('storage/'. $team->logo)}}" class="avatar" alt="">
                         <h3>{{$team->name}}</h2>
                     </div>
                     <div>
