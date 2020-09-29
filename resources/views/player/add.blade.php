@@ -29,10 +29,7 @@
                             @endforeach
                         </select>
               </div>
-              <div class="form-group mb-1 ">
-                <label for="password">Is captian</label>
-                <input type="text"  name="is_captian" class="form-control" placeholder="Details"  >
-              </div>
+              
               <div class="form-group mb-1 ">
                 <label for="password">Matches Played</label>
                 <input type="text"  name="matches" class="form-control" placeholder="matches"  >
