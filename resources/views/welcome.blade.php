@@ -38,7 +38,7 @@
               <div>
                 <span class="h6">Top 3 Batsman</span>
               </div>
-              <a href="#">View all &rsaquo;</a>
+              <a href="{{url('/players')}}">View all &rsaquo;</a>
             </div>
             <div class="card-body">
               <ul class="list-unstyled list-spacing-sm">
@@ -63,7 +63,7 @@
               <div>
                 <span class="h6">Top 3 Bowlers</span>
               </div>
-              <a href="#">View all &rsaquo;</a>
+              <a href="{{url('/players')}}">View all &rsaquo;</a>
             </div>
             <div class="card-body">
               <ul class="list-unstyled list-spacing-sm">
@@ -195,7 +195,7 @@
               <div>
                 <span class="h6">Top 3 Teams</span>
               </div>
-              <a href="#">View all &rsaquo;</a>
+              <a href="{{url('/teams')}}">View all &rsaquo;</a>
             </div>
             <div class="card-body">
               <ul class="list-unstyled list-spacing-sm">
@@ -206,7 +206,7 @@
                     <img alt="Image" src="{{asset('storage/'. $t->logo)}}" class="avatar avatar-sm mr-3" />
                     <div class="media-body">
                       <span class="h6 mb-0">{{$t->name}}</span>
-                      <span class="text-muted">Won: {{$bw->won}}</span>
+                      
                     </div>
                   </a>
                 </li>

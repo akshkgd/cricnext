@@ -20,7 +20,7 @@
                         <input type="text" name=" name" class="form-control" value="{{$player->name}}">
                     </div>
                     <div class="form-group mb-1 ">
-                        <label for="password">Birthday</label>
+                        <label for="password">Age</label>
                         <input type="text" name="age" class="form-control" value="{{$player->age}}">
                     </div>
 
